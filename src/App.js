@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import LandingPage from './page/city-weather';
+
+export const CHOCO_THEME = {
+  palette: {
+    type: 'light',
+    primary: {
+      main: '#ffecb3',
+      contrastText: '#5a2e20',
+    },
+    secondary: {
+      main: '#997f76',
+      contrastText: '#f2fecb3',
+    },
+    background: {
+      default: '#997f76',
+      paper: '#ad9890',
+      row: '#ad9890',
+    },
+  },
+};
+
+const theme = createTheme(CHOCO_THEME);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <LandingPage />
+    </ThemeProvider>
   );
 }
 
