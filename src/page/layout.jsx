@@ -19,17 +19,21 @@ const Layout = ({ children }) => {
         <Card className={classNames(styles.iCard, styles.purple)}>
           <CardContent>
             <h3>{__(`NAB Frontend Test`)}</h3>
+            <div>+ Location's weather searcher</div>
+            <div>+ Responsive 5 size XL to XS devices</div>
+            <br />
             <div>Lam Nguyen</div>
             <div>Nov 2021</div>
           </CardContent>
         </Card>
         <Card className={classNames(styles.iCard, styles.blue)}>
           <CardContent>
-            <h3>{__(`Technical Stacks`)}</h3>
+            <h3>{__(`Technical Stack`)}</h3>
             <div>create-react Proj Template</div>
-            <div>Google Material MUI5</div>
-            <div>React Hook/Context</div>
-            <div>i18n/theme</div>
+            <br />
+            <div>+ Google Material MUI5</div>
+            <div>+ React Hook/Context</div>
+            <div>+ i18n/theme</div>
           </CardContent>
         </Card>
       </Stack>

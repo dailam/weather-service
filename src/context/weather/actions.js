@@ -10,7 +10,7 @@ export const TYPES = {
 export function useActionCreator(dispatch) {
   const { searchWeather, searchLocation } = useAPI(
     dispatch,
-    'https://www.metaweather.com',
+    'https://www.metaweather.com/api',
   );
 
   const onTrans = useCallback(
@@ -25,21 +25,28 @@ export function useActionCreator(dispatch) {
   );
 
   const onSearchLocation = useCallback(
-    () =>
-      searchLocation().then(({ ...data }) =>
-        Promise.resolve(
-          dispatch({
-            type: TYPES.SEARCH_LOCATION,
-            location: data,
-          }),
-        ),
-      ),
+    (query) =>
+      !query
+        ? Promise.resolve(
+            dispatch({
+              type: TYPES.SEARCH_LOCATION,
+              locations: [],
+            }),
+          )
+        : searchLocation(query).then((data) =>
+            Promise.resolve(
+              dispatch({
+                type: TYPES.SEARCH_LOCATION,
+                locations: data,
+              }),
+            ),
+          ),
     [],
   );
 
   const onSearchWeather = useCallback(
-    () =>
-      searchWeather().then(({ ...data }) =>
+    (woeid) =>
+      searchWeather(woeid).then((data) =>
         Promise.resolve(
           dispatch({
             type: TYPES.SEARCH_WEATHER,

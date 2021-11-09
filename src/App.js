@@ -1,26 +1,22 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LandingPage from './page/city-weather';
 
-export const CHOCO_THEME = {
+const THEME = {
   palette: {
     type: 'light',
     primary: {
-      main: '#ffecb3',
-      contrastText: '#5a2e20',
+      main: '#3f51b5',
     },
     secondary: {
-      main: '#997f76',
-      contrastText: '#f2fecb3',
+      main: '#f50057',
     },
     background: {
-      default: '#997f76',
-      paper: '#ad9890',
-      row: '#ad9890',
+      paper: '#cccccc',
     },
   },
 };
 
-const theme = createTheme(CHOCO_THEME);
+const theme = createTheme(THEME);
 
 function App() {
   return (

@@ -9,8 +9,10 @@ const useAPI = (dispatcher, rootPath = ApiPath) => {
     dispatcher,
   });
 
-  const searchLocation = (query) => getJSON(`api/location/search`, { query });
-  const searchWeather = (woeid) => getJSON(`api/location/${woeid}`);
+  const searchLocation = (query) =>
+    getJSON(`location/search`, { query }, { crossDomain: true });
+  const searchWeather = (woeid) =>
+    getJSON(`location/${woeid}`, { crossDomain: true });
   return {
     searchWeather,
     searchLocation,

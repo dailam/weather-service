@@ -1,19 +1,20 @@
 import { TYPES } from './actions';
 
 export const initialState = {
-  location: {},
+  locations: [],
   weather: {},
 };
 
 window.__ = (text) => text;
 
 const reducer = (state, { type, ...args }) => {
+  //TODO Lam: handle broadcast api catch status wrapper
   switch (type) {
     case TYPES.SEARCH_LOCATION: {
-      const { location } = args;
+      const { locations } = args;
       return {
         ...state,
-        location,
+        locations,
       };
     }
     case TYPES.SEARCH_WEATHER: {

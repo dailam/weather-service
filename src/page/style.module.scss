@@ -1,4 +1,10 @@
+:global(html) {
+  background-color: #aaaaaa;
+}
 :global(#root) {
+  min-height: 100vh;
+  background-color: #aaaaaa;
+
   .iCard {
     h3 {
       color: #ffd04f;
