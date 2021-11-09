@@ -6,6 +6,8 @@ weather-service searcher using https://www.metaweather.com/api/ and Google Mater
 
 open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
 
+DEMO: https://drive.google.com/file/d/1SARBTt1fls6dSEotg77DNkvh5b-ckBnH/view
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
